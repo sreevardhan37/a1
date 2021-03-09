@@ -2,12 +2,12 @@ const Engine = Matter.Engine;
 const World = Matter.World;
 const Bodies = Matter.Bodies;
 const Body = Matter.Body;
-const Constraint=Matter.Constraint;
+
 
 var bobObject1,bobObject2,bobObject3,bobObject4,bobObject5;
 var log;
 var rope1,rope2,rope3,rope4,rope5;
-var Constraintlog;
+
 function preload()
 {
 	
@@ -17,10 +17,7 @@ function setup() {
 	createCanvas(800, 700);
  log=createSprite(350,200,280,20);
  bobObject1=createSprite(400,400,40,40);
- if (keyDown(UP_ARROW)){
-	 x=-10;
-
- }
+ 
  bobObject2=createSprite(450,400,40,40);
  bobObject3=createSprite(350,400,40,40);
  bobObject4=createSprite(300,400,40,40);
@@ -43,15 +40,7 @@ function setup() {
 	world = engine.world;
 
 	//Create the Bodies Here.
-   var option
-   {
-	   bodyA:bobObject1.body
-	   bodyB:Constraintlog.body
-	   stiffness:0.04
-        length:10.
-   }
-   var chain=Constraint.create(option)
-   world.add(world,chain) 
+   
 	Engine.run(engine);
   
 }
@@ -73,7 +62,7 @@ function draw() {
    rope3.display();
    rope4.display();
    rope5.display();
-   Constraintlog.display();
+   
    display()
    {
 	  var pointA =this.rope1.bodyA.position;
